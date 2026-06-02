@@ -56,8 +56,11 @@ The CSV files contain the following columns:
 - **#CL**: Number of generated local-search/cut components recorded by the final setting
 - **mCL**: Maximum local-search/cut level recorded by the final setting
 - **#Cut**: Total number of generated cuts
-- **#EOA**: Number of generated enhanced outer-approximation cuts, reported for settings using these cuts
-- **#LS**: Number of generated lifted subadditive cuts, reported for settings using these cuts
+- **#MaxSM**: Number of generated submodular cuts for max terms
+- **#ProdSM**: Number of generated submodular cuts for product terms, reported for the binary setting
+- **#OA**: Number of generated outer-approximation cuts for product terms
+- **#EOA**: Number of generated enhanced outer-approximation cuts for product terms
+- **#LS**: Number of generated lifted subadditive cuts for product terms
 
 ### Computational Setting
 
