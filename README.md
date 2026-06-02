@@ -13,23 +13,23 @@ This repository provides tables in CSV format with detailed results of the compu
 
 ### Algorithms
 
-The following B&C algorithms are compared in the computational experiments:
+The following B&C settings are compared in the computational experiments:
 
-- **B&C-B**: Branch-and-Cut algorithm based on the binary formulation from the state-of-the-art approach
-- **B&C-I**: Branch-and-Cut algorithm based on the compact integer formulation, using submodular inequalities, enhanced outer-approximation inequalities, and lifted subadditive inequalities
-- **vB&C-I**: Vanilla version of the integer-formulation Branch-and-Cut algorithm
+- **B&C-B**: Re-implemented Branch-and-Cut algorithm based on the binary formulation of the state-of-the-art approach, where binary variables are used to model the co-location of facilities
+- **B&C-I**: Proposed Branch-and-Cut algorithm based on the compact integer formulation, where integer variables are used to model the co-location of facilities; submodular inequalities, enhanced outer-approximation inequalities, and lifted subadditive inequalities are separated and added to the nodes of the search tree
+- **vB&C-I**: Vanilla version of `B&C-I`, where the enhanced outer-approximation inequalities and lifted subadditive inequalities are not implemented
 - **vB&C-I+E**: `vB&C-I` with enhanced outer-approximation inequalities
 - **vB&C-I+L**: `vB&C-I` with lifted subadditive inequalities
-- **vB&C-I+E+L**: `vB&C-I` with both enhanced outer-approximation inequalities and lifted subadditive inequalities
+- **vB&C-I+E+L**: `vB&C-I` with both enhanced outer-approximation inequalities and lifted subadditive inequalities; this setting is equivalent to `B&C-I`
 
 ### CSV Data Details
 
-The CSV files are organized in the following folders:
+The repository contains the following CSV files:
 
-- `comparison_with_state_of_the_art_approach/`: detailed results comparing `B&C-B` and `B&C-I`
-- `performance_effect_of_enhanced_outer_approximation_and_lifted_subadditive_inequalities/`: detailed results comparing `vB&C-I`, `vB&C-I+E`, `vB&C-I+L`, and `vB&C-I+E+L`
+- `bin_vs_bc.csv`: detailed results comparing `B&C-B` and `B&C-I`
+- `vi_four_settings.csv`: detailed results comparing `vB&C-I`, `vB&C-I+E`, `vB&C-I+L`, and `vB&C-I+E+L`
 
-The filename suffix encodes `(r, R, theta)`. For example, `5_20_02` means `r = 5`, `R = 20`, and `theta = 0.2`.
+Each CSV file contains all `(r, R, theta)` settings in a single table. The `id` column is formatted as `instance-r-R-theta`; for example, `1-5-20-0.2` refers to instance `1` with `r = 5`, `R = 20`, and `theta = 0.2`.
 
 The CSV files use a two-line header. The first header line identifies the algorithm group, and the second header line gives the metric names within each group.
 
@@ -55,7 +55,9 @@ The CSV files contain the following columns:
 - **UB**: Upper bound at termination
 - **#CL**: Number of generated local-search/cut components recorded by the final setting
 - **mCL**: Maximum local-search/cut level recorded by the final setting
-- **C**: Total number of generated cuts
+- **#Cut**: Total number of generated cuts
+- **#EOA**: Number of generated enhanced outer-approximation cuts, reported for settings using these cuts
+- **#LS**: Number of generated lifted subadditive cuts, reported for settings using these cuts
 
 ### Computational Setting
 
