@@ -15,7 +15,7 @@ This repository provides tables in CSV format with detailed results of the compu
 
 The following B&C settings are compared in the computational experiments:
 
-- **B&C-B**: Re-implemented Branch-and-Cut algorithm based on the binary formulation of the state-of-the-art approach, where binary variables are used to model the co-location of facilities
+- **B&C-B**: Re-implemented Branch-and-Cut algorithm based on the binary formulation of the state-of-the-art approach [xxx], where binary variables are used to model the co-location of facilities
 - **B&C-I**: Proposed Branch-and-Cut algorithm based on the compact integer formulation, where integer variables are used to model the co-location of facilities; submodular inequalities, enhanced outer-approximation inequalities, and lifted subadditive inequalities are separated and added to the nodes of the search tree
 - **vB&C-I**: Basic version of `B&C-I`, where the enhanced outer-approximation inequalities and lifted subadditive inequalities are not implemented
 - **vB&C-I+E**: `vB&C-I` with enhanced outer-approximation inequalities
