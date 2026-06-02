@@ -20,13 +20,14 @@ The following B&C algorithms are compared in the computational experiments:
 - **vB&C-I**: Vanilla version of the integer-formulation Branch-and-Cut algorithm
 - **vB&C-I+E**: `vB&C-I` with enhanced outer-approximation inequalities
 - **vB&C-I+L**: `vB&C-I` with lifted subadditive inequalities
+- **vB&C-I+E+L**: `vB&C-I` with both enhanced outer-approximation inequalities and lifted subadditive inequalities
 
 ### CSV Data Details
 
 The CSV files are organized in the following folders:
 
 - `comparison_with_state_of_the_art_approach/`: detailed results comparing `B&C-B` and `B&C-I`
-- `performance_effect_of_enhanced_outer_approximation_and_lifted_subadditive_inequalities/`: detailed results comparing `vB&C-I`, `vB&C-I+E`, `vB&C-I+L`, and `B&C-I`
+- `performance_effect_of_enhanced_outer_approximation_and_lifted_subadditive_inequalities/`: detailed results comparing `vB&C-I`, `vB&C-I+E`, `vB&C-I+L`, and `vB&C-I+E+L`
 
 The filename suffix encodes `(r, R, theta)`. For example, `5_20_02` means `r = 5`, `R = 20`, and `theta = 0.2`.
 
