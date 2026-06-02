@@ -15,12 +15,12 @@ This repository provides tables in CSV format with detailed results of the compu
 
 The following B&C settings are compared in the computational experiments:
 
-- **B&C-B (SOTA)**: Re-implemented Branch-and-Cut algorithm based on the binary formulation of the state-of-the-art approach, where binary variables are used to model the co-location of facilities
-- **B&C-I**: Proposed Branch-and-Cut algorithm based on the compact integer formulation, where integer variables are used to model the co-location of facilities; submodular inequalities, enhanced outer-approximation inequalities, and lifted subadditive inequalities are separated and added to the nodes of the search tree
-- **bB&C-I**: Basic version of `B&C-I`, where the enhanced outer-approximation inequalities and lifted subadditive inequalities are not implemented
-- **bB&C-I+E**: `bB&C-I` with enhanced outer-approximation inequalities
-- **bB&C-I+L**: `bB&C-I` with lifted subadditive inequalities
-- **bB&C-I+E+L**: `bB&C-I` with both enhanced outer-approximation inequalities and lifted subadditive inequalities; this setting is equivalent to `B&C-I`
+- **B&C-B (SOTA)**: The Branch-and-Cut algorithm based on the binary formulation of [Alvarez-Miranda et al. (2019)](https://doi.org/10.1016/j.cor.2019.04.003), with binary variables being used to model the co-location of facilities; inequalities for the max and product terms are separated and added to the nodes of the search tree
+- **B&C-I**: The proposed Branch-and-Cut algorithm based on the compact integer formulation, with integer variables being used to model the co-location of facilities; submodular inequalities, enhanced outer-approximation inequalities, and lifted subadditive inequalities are separated and added to the nodes of the search tree
+- **bB&C-I**: The vanilla version of `B&C-I`, where both the enhanced outer-approximation inequalities and the lifted subadditive inequalities were not implemented
+- **bB&C-I+E**: Setting `bB&C-I` with the enhanced outer-approximation inequalities
+- **bB&C-I+L**: Setting `bB&C-I` with the lifted subadditive inequalities
+- **bB&C-I+E+L**: Setting `bB&C-I` with both the enhanced outer-approximation inequalities and the lifted subadditive inequalities; this setting is equivalent to `B&C-I`
 
 ### CSV Data Details
 
@@ -67,7 +67,3 @@ The CSV files contain the following columns:
 The experiments use 240 MPCLP benchmark instances from the literature. These instances are constructed from 40 K-median instances in the OR-Library, with uniform customer demands and identical numbers of customers and candidate facility locations.
 
 The branch-and-cut algorithm was implemented in Julia 1.7.3 with CPLEX 20.1.0. The reported experiments use a 3600-second time limit and a 0% relative MIP gap tolerance. The computations were run on Intel Xeon Gold 6140 CPU @ 2.30GHz machines.
-
-### Reference
-
-- **B&C-B (SOTA)**: The state-of-the-art Branch-and-Cut approach proposed by [Alvarez-Miranda et al. (2019)](https://doi.org/10.1016/j.cor.2019.04.003).
