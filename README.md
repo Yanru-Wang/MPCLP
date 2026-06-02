@@ -1,6 +1,6 @@
 ## Detailed Computational Results for the MPCLP Paper
 
-This repository provides detailed computational results and Figure 4 source files for the paper:
+This repository provides detailed computational results for the paper:
 
 **An efficient branch-and-cut algorithm for the multiple probabilistic covering location problem**
 
@@ -11,16 +11,10 @@ The paper studies the multiple probabilistic covering location problem (MPCLP), 
 ### Repository Structure
 
 ```text
-results/
-  comparison_with_state_of_the_art_approach/
-    tbl_02_bin_vs_bc_*.csv
-  performance_effect_of_enhanced_outer_approximation_and_lifted_subadditive_inequalities/
-    tbl_04_vi_four_settings_*.csv
-  figure_4_performance_profiles_of_cpu_time_and_end_gap/
-    figure_4a_cpu_time_profile.eps
-    figure_4a_cpu_time_profile.pdf
-    figure_4b_end_gap_profile.eps
-    figure_4b_end_gap_profile.pdf
+comparison_with_state_of_the_art_approach/
+  tbl_02_bin_vs_bc_*.csv
+performance_effect_of_enhanced_outer_approximation_and_lifted_subadditive_inequalities/
+  tbl_04_vi_four_settings_*.csv
 ```
 
 The CSV files use a two-line header, following the companion CSV style used for related computational-result repositories. The first header line identifies the algorithm group; the second header line gives the metric names within each group.
@@ -46,30 +40,23 @@ The filename suffix encodes `(r, R, theta)`. For example, `5_20_02` means `r = 5
 
 These files correspond to the appendix tables titled "Performance comparison of settings `B&C-B` and `B&C-I`" for each `(r, R, theta)` setting.
 
-- `results/comparison_with_state_of_the_art_approach/tbl_02_bin_vs_bc_5_20_02.csv`
-- `results/comparison_with_state_of_the_art_approach/tbl_02_bin_vs_bc_5_20_05.csv`
-- `results/comparison_with_state_of_the_art_approach/tbl_02_bin_vs_bc_5_20_08.csv`
-- `results/comparison_with_state_of_the_art_approach/tbl_02_bin_vs_bc_10_25_02.csv`
-- `results/comparison_with_state_of_the_art_approach/tbl_02_bin_vs_bc_10_25_05.csv`
-- `results/comparison_with_state_of_the_art_approach/tbl_02_bin_vs_bc_10_25_08.csv`
+- `comparison_with_state_of_the_art_approach/tbl_02_bin_vs_bc_5_20_02.csv`
+- `comparison_with_state_of_the_art_approach/tbl_02_bin_vs_bc_5_20_05.csv`
+- `comparison_with_state_of_the_art_approach/tbl_02_bin_vs_bc_5_20_08.csv`
+- `comparison_with_state_of_the_art_approach/tbl_02_bin_vs_bc_10_25_02.csv`
+- `comparison_with_state_of_the_art_approach/tbl_02_bin_vs_bc_10_25_05.csv`
+- `comparison_with_state_of_the_art_approach/tbl_02_bin_vs_bc_10_25_08.csv`
 
 #### Performance Effect of the Enhanced Outer-Approximation and Lifted Subadditive Inequalities
 
 These files correspond to the appendix tables titled "Performance comparison of settings `vB&C-I`, `vB&C-I+E`, `vB&C-I+L`, and `B&C-I`" for each `(r, R, theta)` setting.
 
-- `results/performance_effect_of_enhanced_outer_approximation_and_lifted_subadditive_inequalities/tbl_04_vi_four_settings_5_20_02.csv`
-- `results/performance_effect_of_enhanced_outer_approximation_and_lifted_subadditive_inequalities/tbl_04_vi_four_settings_5_20_05.csv`
-- `results/performance_effect_of_enhanced_outer_approximation_and_lifted_subadditive_inequalities/tbl_04_vi_four_settings_5_20_08.csv`
-- `results/performance_effect_of_enhanced_outer_approximation_and_lifted_subadditive_inequalities/tbl_04_vi_four_settings_10_25_02.csv`
-- `results/performance_effect_of_enhanced_outer_approximation_and_lifted_subadditive_inequalities/tbl_04_vi_four_settings_10_25_05.csv`
-- `results/performance_effect_of_enhanced_outer_approximation_and_lifted_subadditive_inequalities/tbl_04_vi_four_settings_10_25_08.csv`
-
-### Figure 4
-
-The folder `results/figure_4_performance_profiles_of_cpu_time_and_end_gap/` contains the source files for Figure 4 in the paper, titled "Performance profiles of the CPU time and the end gap returned by settings `B&C-B` and `B&C-I`."
-
-- `figure_4a_cpu_time_profile.eps` and `figure_4a_cpu_time_profile.pdf`: CPU time profile.
-- `figure_4b_end_gap_profile.eps` and `figure_4b_end_gap_profile.pdf`: end-gap profile.
+- `performance_effect_of_enhanced_outer_approximation_and_lifted_subadditive_inequalities/tbl_04_vi_four_settings_5_20_02.csv`
+- `performance_effect_of_enhanced_outer_approximation_and_lifted_subadditive_inequalities/tbl_04_vi_four_settings_5_20_05.csv`
+- `performance_effect_of_enhanced_outer_approximation_and_lifted_subadditive_inequalities/tbl_04_vi_four_settings_5_20_08.csv`
+- `performance_effect_of_enhanced_outer_approximation_and_lifted_subadditive_inequalities/tbl_04_vi_four_settings_10_25_02.csv`
+- `performance_effect_of_enhanced_outer_approximation_and_lifted_subadditive_inequalities/tbl_04_vi_four_settings_10_25_05.csv`
+- `performance_effect_of_enhanced_outer_approximation_and_lifted_subadditive_inequalities/tbl_04_vi_four_settings_10_25_08.csv`
 
 ### Algorithm Labels
 
