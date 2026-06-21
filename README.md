@@ -57,7 +57,7 @@ The CSV files contain the following columns:
 - **N**: Number of explored branch-and-bound nodes
 - **Gap(%)**: Final optimality gap in percent
 - **RGap(%)**: LP relaxation gap at the root node in percent
-- **Obj**: Incumbent objective value
+- **Obj**: Objective value of the optimal solution (or best incumbent)
 - **UB**: Upper bound at termination
 - **#CL**: Number of generated local-search/cut components, reported in `bin_vs_bc.csv`
 - **mCL**: Maximum local-search/cut level, reported in `bin_vs_bc.csv`
