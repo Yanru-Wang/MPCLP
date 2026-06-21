@@ -26,10 +26,13 @@ The following B&C settings are compared in the computational experiments:
 
 The repository contains the following CSV files:
 
-- `bin_vs_bc.csv`: detailed results comparing `B&C-B` and `B&C-I`
-- `vi_four_settings.csv`: detailed results comparing `bB&C-I`, `bB&C-I+E`, `bB&C-I+L`, and `bB&C-I+E+L`
+- `bin_vs_bc.csv`: detailed results comparing `B&C-B` and `B&C-I` on the original benchmark testset.
+- `vi_four_settings.csv`: detailed results comparing `bB&C-I`, `bB&C-I+E`, `bB&C-I+L`, and `bB&C-I+E+L` on the original benchmark testset.
+- `vi_four_settings_testset2_ps_selected.csv`: detailed results comparing `bB&C-I`, `bB&C-I+E`, `bB&C-I+L`, and `bB&C-I+E+L` on the second testset with stepwise coverage probabilities. This file reports the selected values `p_s in {0.1, 0.2, 0.5}` and radius pairs `(r, R) in {(1, 20), (2, 20)}`.
 
-Each CSV file contains all `(r, R, theta)` settings in a single table. The `id` column is formatted as `instance-r-R-theta`; for example, `1-5-20-0.2` refers to instance `1` with `r = 5`, `R = 20`, and `theta = 0.2`.
+The original-testset CSV files contain all `(r, R, theta)` settings in a single table. In these files, the `id` column is formatted as `instance-r-R-theta`; for example, `1-5-20-0.2` refers to instance `1` with `r = 5`, `R = 20`, and `theta = 0.2`.
+
+The second-testset CSV file uses a unique `id` formatted as `instance-r-R-theta-p_s` and also repeats `r`, `R`, `theta`, and `p_s` in separate columns for easier filtering. Each data row corresponds to one `(instance, r, R, theta, p_s)` combination.
 
 The CSV files use a two-line header. The first header line identifies the algorithm group, and the second header line gives the metric names within each group.
 
@@ -39,9 +42,12 @@ The CSV files contain the following columns:
 
 #### Instance Parameters
 
-- **id**: Instance identifier, formatted as `instance-r-R-theta`
-- **|V|**: Number of customers and candidate facility locations
+- **id**: Instance identifier. In the original-testset CSV files it is formatted as `instance-r-R-theta`; in `vi_four_settings_testset2_ps_selected.csv`, it is formatted as `instance-r-R-theta-p_s`, with the radius and probability parameters also stored in separate columns.
+- **|I|**: Number of customers and candidate facility locations. 
 - **K**: Number of facilities to open
+- **r, R**: Inner and outer coverage radii. These are separate columns in `vi_four_settings_testset2_ps_selected.csv`.
+- **theta**: Demand coverage threshold. This is a separate column in `vi_four_settings_testset2_ps_selected.csv`.
+- **p_s**: Intermediate stepwise coverage probability, reported in `vi_four_settings_testset2_ps_selected.csv`.
 - **#C1**: Number of fully covered customer-location pairs
 - **#CP**: Number of partially covered customer-location pairs
 
