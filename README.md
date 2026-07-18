@@ -47,7 +47,7 @@ The CSV files contain the following columns:
 - **|I|**: Number of customers and candidate facility locations. 
 - **K**: Number of facilities to open
 - **r, R**: Inner and outer coverage radii. These are separate columns in `vi_four_settings_facility_mixture.csv`.
-- **theta**: Demand coverage threshold. This is a separate column in `vi_four_settings_facility_mixture.csv`.
+- **theta**: Dependency parameter that weights the correlated-coverage and independent-coverage components. This is a separate column in `vi_four_settings_facility_mixture.csv`.
 - **low p_i (%)**: Percentage of facilities drawn from the low-probability range (`10`, `50`, or `90`); the high-probability percentage is its complement to 100.
 - **#C1**: Number of fully covered customer-location pairs
 - **#CP**: Number of partially covered customer-location pairs
@@ -60,8 +60,8 @@ The CSV files contain the following columns:
 - **RGap(%)**: LP relaxation gap at the root node in percent
 - **Obj**: Objective value of the optimal solution (or best incumbent)
 - **UB**: Upper bound at termination
-- **#CL**: Number of generated local-search/cut components, reported in `bin_vs_bc.csv`
-- **mCL**: Maximum local-search/cut level, reported in `bin_vs_bc.csv`
+- **#CL**: Number of sites at which facilities are co-located, reported in `bin_vs_bc.csv`
+- **mCL**: Maximum number of facilities opened at a single site, reported in `bin_vs_bc.csv`
 - **#Cut**: Total number of generated cuts
 - **#MaxSM**: Number of generated submodular cuts for max terms
 - **#ProdSM**: Number of generated submodular cuts for product terms, reported for the binary setting
