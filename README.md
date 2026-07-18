@@ -28,11 +28,12 @@ The repository contains the following CSV files:
 
 - `bin_vs_bc.csv`: detailed results comparing `B&C-B` and `B&C-I` on the original benchmark testset.
 - `vi_four_settings.csv`: detailed results comparing `bB&C-I`, `bB&C-I+E`, `bB&C-I+L`, and `bB&C-I+E+L` on the original benchmark testset.
-- `vi_four_settings_testset2_ps_selected.csv`: detailed results comparing `bB&C-I`, `bB&C-I+E`, `bB&C-I+L`, and `bB&C-I+E+L` on the second testset with stepwise coverage probabilities. This file reports the selected values `p_s in {0.1, 0.2, 0.5}` and radius pairs `(r, R) in {(1, 20), (2, 20)}`.
+- `vi_four_settings_facility_mixture.csv`: detailed results comparing `bB&C-I`, `bB&C-I+E`, `bB&C-I+L`, and `bB&C-I+E+L` on the facility-mixture second testset. This file reports low/high facility-probability shares `10/90`, `50/50`, and `90/10`, with radius pairs `(r, R) in {(1, 20), (2, 20)}` and `theta in {0.01, 0.1, 0.2}`.
+- `baseline_export_manifest.json`: SHA-256 provenance linking every CSV to the active T1/T2 baseline summaries used by OR-Stat-Kit.
 
 The original-testset CSV files contain all `(r, R, theta)` settings in a single table. In these files, the `id` column is formatted as `instance-r-R-theta`; for example, `1-5-20-0.2` refers to instance `1` with `r = 5`, `R = 20`, and `theta = 0.2`.
 
-The second-testset CSV file uses a unique `id` formatted as `instance-r-R-theta-p_s` and also repeats `r`, `R`, `theta`, and `p_s` in separate columns for easier filtering. Each data row corresponds to one `(instance, r, R, theta, p_s)` combination.
+The second-testset CSV file uses a unique `id` formatted as `instance-r-R-theta-mixture` and also repeats `r`, `R`, `theta`, the four-digit mixture code, and its low/high shares in separate columns for easier filtering. Each data row corresponds to one `(instance, r, R, theta, mixture)` combination.
 
 The CSV files use a two-line header. The first header line identifies the algorithm group, and the second header line gives the metric names within each group.
 
@@ -42,12 +43,13 @@ The CSV files contain the following columns:
 
 #### Instance Parameters
 
-- **id**: Instance identifier. In the original-testset CSV files it is formatted as `instance-r-R-theta`; in `vi_four_settings_testset2_ps_selected.csv`, it is formatted as `instance-r-R-theta-p_s`, with the radius and probability parameters also stored in separate columns.
+- **id**: Instance identifier. In the original-testset CSV files it is formatted as `instance-r-R-theta`; in `vi_four_settings_facility_mixture.csv`, it is formatted as `instance-r-R-theta-mixture`, with the radius and mixture parameters also stored in separate columns.
 - **|I|**: Number of customers and candidate facility locations. 
 - **K**: Number of facilities to open
-- **r, R**: Inner and outer coverage radii. These are separate columns in `vi_four_settings_testset2_ps_selected.csv`.
-- **theta**: Demand coverage threshold. This is a separate column in `vi_four_settings_testset2_ps_selected.csv`.
-- **p_s**: Intermediate stepwise coverage probability, reported in `vi_four_settings_testset2_ps_selected.csv`.
+- **r, R**: Inner and outer coverage radii. These are separate columns in `vi_four_settings_facility_mixture.csv`.
+- **theta**: Demand coverage threshold. This is a separate column in `vi_four_settings_facility_mixture.csv`.
+- **mixture**: Four-digit low/high share code (`1090`, `5050`, or `9010`) used by the facility-mixture experiment.
+- **low_share, high_share**: Decimal shares corresponding to the mixture code.
 - **#C1**: Number of fully covered customer-location pairs
 - **#CP**: Number of partially covered customer-location pairs
 
@@ -73,3 +75,8 @@ The CSV files contain the following columns:
 The experiments use 240 MPCLP benchmark instances from the literature. These instances are constructed from 40 K-median instances in the OR-Library, with uniform customer demands and identical numbers of customers and candidate facility locations.
 
 The branch-and-cut algorithm was implemented in Julia 1.7.3 with CPLEX 20.1.0. The reported experiments use a 3600-second time limit and a 0% relative MIP gap tolerance. The computations were run on Intel Xeon Gold 6140 CPU @ 2.30GHz machines.
+
+The published CSVs are regenerated from the active `2026-07-15_yry` baseline:
+1,200 original-testset records and 4,560 facility-mixture T2 records. The
+summaries are rebuilt from their declared remote raw-log paths, then validated
+and rendered through OR-Stat-Kit before the detailed CSV export.
