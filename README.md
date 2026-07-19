@@ -26,11 +26,10 @@ The following B&C settings are compared in the computational experiments:
 
 The repository contains the following CSV files:
 
-- `bin_vs_bc.csv`: detailed results comparing `B&C-B` and `B&C-I` on the original benchmark testset.
-- `bc_i_facility_mixture.csv`: detailed B&C-I results on the facility-mixture second testset, using the same B&C-I result columns as `bin_vs_bc.csv`.
-- `vi_four_settings.csv`: detailed results comparing `bB&C-I`, `bB&C-I+E`, `bB&C-I+L`, and `bB&C-I+E+L` on the original benchmark testset.
-- `vi_four_settings_facility_mixture.csv`: detailed results comparing `bB&C-I`, `bB&C-I+E`, `bB&C-I+L`, and `bB&C-I+E+L` on the facility-mixture second testset. This file reports low facility-probability percentages `10`, `50`, and `90` (with complementary high percentages), radius pairs `(r, R) in {(1, 20), (2, 20)}`, and `theta in {0.01, 0.1, 0.2}`.
-- `baseline_export_manifest.json`: SHA-256 provenance linking every CSV to the active T1/T2 baseline summaries used by OR-Stat-Kit.
+- `Table3_detailed.csv`: detailed results comparing `B&C-B` and `B&C-I` on the original benchmark testset.
+- `Table4_detailed.csv`: detailed results comparing `bB&C-I`, `bB&C-I+E`, `bB&C-I+L`, and `bB&C-I+E+L` on the original benchmark testset.
+- `Table5_detailed.csv`: detailed results comparing `bB&C-I`, `bB&C-I+E`, `bB&C-I+L`, and `bB&C-I+E+L` on the facility-mixture second testset. This file reports low facility-probability percentages `10`, `50`, and `90` (with complementary high percentages), radius pairs `(r, R) in {(1, 20), (2, 20)}`, and `theta in {0.01, 0.1, 0.2}`.
+- `T2_BnC-I_detailed.csv`: detailed B&C-I results on the facility-mixture second testset, using the same B&C-I result columns as `Table3_detailed.csv`.
 
 The original-testset CSV files contain all `(r, R, theta)` settings in a single table. In these files, the `id` column is formatted as `instance-r-R-theta`; for example, `1-5-20-0.2` refers to instance `1` with `r = 5`, `R = 20`, and `theta = 0.2`.
 
@@ -61,8 +60,8 @@ The CSV files contain the following columns:
 - **RGap(%)**: LP relaxation gap at the root node in percent
 - **Obj**: Objective value of the optimal solution (or best incumbent)
 - **UB**: Upper bound at termination
-- **#CL**: Number of sites at which facilities are co-located, reported in `bin_vs_bc.csv` and `bc_i_facility_mixture.csv`
-- **mCL**: Maximum number of facilities opened at a single site, reported in `bin_vs_bc.csv` and `bc_i_facility_mixture.csv`
+- **nCL**: Number of sites at which facilities are co-located, reported in `Table3_detailed.csv` and `T2_BnC-I_detailed.csv`
+- **mCL**: Maximum number of facilities opened at a single site, reported in `Table3_detailed.csv` and `T2_BnC-I_detailed.csv`
 - **#Cut**: Total number of generated cuts
 - **#MaxSM**: Number of generated submodular cuts for max terms
 - **#ProdSM**: Number of generated submodular cuts for product terms, reported for the binary setting
