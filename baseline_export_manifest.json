@@ -22,6 +22,10 @@
       "sha256": "15ec42d9b2a1b26c91d1c52005be060d41a5d9ba2cc81a1f7439ea40e9a6d3f4",
       "data_rows": 240
     },
+    "bc_i_facility_mixture.csv": {
+      "sha256": "5fc94db00154cd2879d49c419c0ade68bf75d1e7185ef19c4365f23e3fef544e",
+      "data_rows": 720
+    },
     "vi_four_settings_facility_mixture.csv": {
       "sha256": "12a43aaa015fa43157c2b37035c273ff2437713808c9a20e3d8fb9b0f4675e35",
       "data_rows": 720

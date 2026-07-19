@@ -27,13 +27,14 @@ The following B&C settings are compared in the computational experiments:
 The repository contains the following CSV files:
 
 - `bin_vs_bc.csv`: detailed results comparing `B&C-B` and `B&C-I` on the original benchmark testset.
+- `bc_i_facility_mixture.csv`: detailed B&C-I results on the facility-mixture second testset, using the same B&C-I result columns as `bin_vs_bc.csv`.
 - `vi_four_settings.csv`: detailed results comparing `bB&C-I`, `bB&C-I+E`, `bB&C-I+L`, and `bB&C-I+E+L` on the original benchmark testset.
 - `vi_four_settings_facility_mixture.csv`: detailed results comparing `bB&C-I`, `bB&C-I+E`, `bB&C-I+L`, and `bB&C-I+E+L` on the facility-mixture second testset. This file reports low facility-probability percentages `10`, `50`, and `90` (with complementary high percentages), radius pairs `(r, R) in {(1, 20), (2, 20)}`, and `theta in {0.01, 0.1, 0.2}`.
 - `baseline_export_manifest.json`: SHA-256 provenance linking every CSV to the active T1/T2 baseline summaries used by OR-Stat-Kit.
 
 The original-testset CSV files contain all `(r, R, theta)` settings in a single table. In these files, the `id` column is formatted as `instance-r-R-theta`; for example, `1-5-20-0.2` refers to instance `1` with `r = 5`, `R = 20`, and `theta = 0.2`.
 
-The second-testset CSV file uses a unique `id` formatted as `instance-r-R-theta-low-percentage` and also repeats `r`, `R`, `theta`, and `low p_i (%)` in separate columns for easier filtering. Each data row corresponds to one `(instance, r, R, theta, low p_i (%))` combination.
+The second-testset CSV files use a unique `id` formatted as `instance-r-R-theta-low-percentage` and also repeat `r`, `R`, `theta`, and `low p_i (%)` in separate columns for easier filtering. Each data row corresponds to one `(instance, r, R, theta, low p_i (%))` combination.
 
 The CSV files use a two-line header. The first header line identifies the algorithm group, and the second header line gives the metric names within each group.
 
@@ -43,11 +44,11 @@ The CSV files contain the following columns:
 
 #### Instance Parameters
 
-- **id**: Instance identifier. In the original-testset CSV files it is formatted as `instance-r-R-theta`; in `vi_four_settings_facility_mixture.csv`, it is formatted as `instance-r-R-theta-low-percentage`, with the radius and low-probability parameters also stored in separate columns.
+- **id**: Instance identifier. In the original-testset CSV files it is formatted as `instance-r-R-theta`; in the facility-mixture CSV files, it is formatted as `instance-r-R-theta-low-percentage`, with the radius and low-probability parameters also stored in separate columns.
 - **|I|**: Number of customers and candidate facility locations. 
 - **K**: Number of facilities to open
-- **r, R**: Inner and outer coverage radii. These are separate columns in `vi_four_settings_facility_mixture.csv`.
-- **theta**: Dependency parameter that weights the correlated-coverage and independent-coverage components. This is a separate column in `vi_four_settings_facility_mixture.csv`.
+- **r, R**: Inner and outer coverage radii. These are separate columns in the facility-mixture CSV files.
+- **theta**: Dependency parameter that weights the correlated-coverage and independent-coverage components. This is a separate column in the facility-mixture CSV files.
 - **low p_i (%)**: Percentage of facilities drawn from the low-probability range (`10`, `50`, or `90`); the high-probability percentage is its complement to 100.
 - **#C1**: Number of fully covered customer-location pairs
 - **#CP**: Number of partially covered customer-location pairs
@@ -60,8 +61,8 @@ The CSV files contain the following columns:
 - **RGap(%)**: LP relaxation gap at the root node in percent
 - **Obj**: Objective value of the optimal solution (or best incumbent)
 - **UB**: Upper bound at termination
-- **#CL**: Number of sites at which facilities are co-located, reported in `bin_vs_bc.csv`
-- **mCL**: Maximum number of facilities opened at a single site, reported in `bin_vs_bc.csv`
+- **#CL**: Number of sites at which facilities are co-located, reported in `bin_vs_bc.csv` and `bc_i_facility_mixture.csv`
+- **mCL**: Maximum number of facilities opened at a single site, reported in `bin_vs_bc.csv` and `bc_i_facility_mixture.csv`
 - **#Cut**: Total number of generated cuts
 - **#MaxSM**: Number of generated submodular cuts for max terms
 - **#ProdSM**: Number of generated submodular cuts for product terms, reported for the binary setting
