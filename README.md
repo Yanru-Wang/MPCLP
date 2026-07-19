@@ -2,7 +2,7 @@
 
 ### An efficient branch-and-cut algorithm for the multiple probabilistic covering location problem
 
-### Yan-Ru Wang, Wei-Kun Chen, and Ivana Ljubic
+### Yan-Ru Wang, Wei-Kun Chen, and Ivana Ljubić
 
 #### [https://arxiv.org/abs/2511.17128](https://arxiv.org/abs/2511.17128)
 
