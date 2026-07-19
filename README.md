@@ -15,8 +15,8 @@ This repository provides tables in CSV format with detailed results of the compu
 
 The following B&C settings are compared in the computational experiments:
 
-- **B&C-I**: The proposed B&C algorithm based on formulation (MILP) (with integer variables $\{y_i\}_{i \in \mathcal{I}}$ being used to model the co-location of facilities) in which the submodular inequalities (15a), the enhanced outer-approximation inequalities (EOA), and the lifted subadditive inequalities (LS) are separated and added to the nodes of the search tree.
-- **B&C-B**: The B&C algorithm based on formulation (MILP-B) of [Alvarez-Miranda and Sinnl (2019)](https://doi.org/10.1016/j.cor.2019.04.003) (with binary variables $\{x_i^k\}_{i \in \mathcal{I}, k \in [K]}$ being used to model the co-location of facilities) in which inequalities (16c) and (16d) are separated and added to the nodes of the search tree.
+- **B&C-I**: The proposed B&C algorithm based on formulation (MILP) (with integer variables $\left\{y_i\right\}_{i \in \mathcal{I}}$ being used to model the co-location of facilities) in which the submodular inequalities (15a), the enhanced outer-approximation inequalities (EOA), and the lifted subadditive inequalities (LS) are separated and added to the nodes of the search tree.
+- **B&C-B**: The B&C algorithm based on formulation (MILP-B) of [Alvarez-Miranda and Sinnl (2019)](https://doi.org/10.1016/j.cor.2019.04.003) (with binary variables $\left\{x_i^k\right\}_{i \in \mathcal{I}, k \in [K]}$ being used to model the co-location of facilities) in which inequalities (16c) and (16d) are separated and added to the nodes of the search tree.
 - **bB&C-I**: The basic version of `B&C-I`, where both the enhanced outer-approximation inequalities (EOA) and the lifted subadditive inequalities (LS) were not implemented.
 - **bB&C-I+E**: Setting `bB&C-I` with the enhanced outer-approximation inequalities (EOA).
 - **bB&C-I+L**: Setting `bB&C-I` with the lifted subadditive inequalities (LS).
